@@ -1,0 +1,172 @@
+﻿Прохождение сценария в GitBash 
+
+
+User@PC MINGW64 ~
+$ pwd				#посмотреть в какой папке находишься
+/c/Users/User
+
+User@PC MINGW64 ~
+$ mkdir Barcelona		#создать папку
+
+User@PC MINGW64 ~
+$ cd Barcelona			#зайти в папку
+
+User@PC MINGW64 ~/Barcelona
+$ mkdir Day1 Day2 Day3		#создать 3 папки
+
+User@PC MINGW64 ~/Barcelona
+$ cd Day1/			#зайти в папку
+
+User@PC MINGW64 ~/Barcelona/Day1
+$ touch Air.txt Sea.txt Attractions.txt Air.json Sea.json	#создать 5 файлов
+
+User@PC MINGW64 ~/Barcelona/Day1
+$ mkdir -p ~/Barcelona/Day1/Foto/Cart1/Jim		#создать три вложенные папки
+
+User@PC MINGW64 ~/Barcelona/Day1
+$ ls -la						#посмотреть список содержимого папки 
+total 4
+drwxr-xr-x 1 User 197121 0 May  4 17:54 ./
+drwxr-xr-x 1 User 197121 0 May  4 17:45 ../
+-rw-r--r-- 1 User 197121 0 May  4 17:48 Air.json
+-rw-r--r-- 1 User 197121 0 May  4 17:48 Air.txt
+-rw-r--r-- 1 User 197121 0 May  4 17:48 Attractions.txt
+drwxr-xr-x 1 User 197121 0 May  4 17:54 Foto/
+-rw-r--r-- 1 User 197121 0 May  4 17:48 Sea.json
+-rw-r--r-- 1 User 197121 0 May  4 17:48 Sea.txt
+
+User@PC MINGW64 ~/Barcelona/Day1			#проверить наличие вложенных папок
+$ cd Foto/					
+
+User@PC MINGW64 ~/Barcelona/Day1/Foto
+$ ls -la					
+total 4
+drwxr-xr-x 1 User 197121 0 May  4 17:54 ./
+drwxr-xr-x 1 User 197121 0 May  4 17:54 ../
+drwxr-xr-x 1 User 197121 0 May  4 17:54 Cart1/
+
+User@PC MINGW64 ~/Barcelona/Day1/Foto
+$ cd Cart1/					
+
+User@PC MINGW64 ~/Barcelona/Day1/Foto/Cart1
+$ ls -la
+total 0
+drwxr-xr-x 1 User 197121 0 May  4 17:54 ./
+drwxr-xr-x 1 User 197121 0 May  4 17:54 ../
+drwxr-xr-x 1 User 197121 0 May  4 17:54 Jim/
+
+User@PC MINGW64 ~/Barcelona/Day1/Foto/Cart1		
+$ cd ../..					#выйти на 2 уровня вверх
+
+User@PC MINGW64 ~/Barcelona/Day1			
+$ vim Air.txt					#открыть файл в редакторе vim и вводим текст
+
+User@PC MINGW64 ~/Barcelona/Day1
+$ less Air.txt					#посмотреть содержимое файла в отдельном окне
+
+User@PC MINGW64 ~/Barcelona/Day1
+$ mv Air.txt Sea.txt ~/Barcelona/Day2		#переместить файлы из папки Day1 в папку Day2
+
+User@PC MINGW64 ~/Barcelona/Day1
+$ ls -la
+total 4
+drwxr-xr-x 1 User 197121 0 May  4 18:08 ./
+drwxr-xr-x 1 User 197121 0 May  4 17:45 ../
+-rw-r--r-- 1 User 197121 0 May  4 17:48 Air.json
+-rw-r--r-- 1 User 197121 0 May  4 17:48 Attractions.txt
+drwxr-xr-x 1 User 197121 0 May  4 17:54 Foto/
+-rw-r--r-- 1 User 197121 0 May  4 17:48 Sea.json
+
+User@PC MINGW64 ~/Barcelona/Day1
+$ cd ~/Barcelona/Day2
+
+User@PC MINGW64 ~/Barcelona/Day2
+$ ls -la
+total 1
+drwxr-xr-x 1 User 197121  0 May  4 18:08 ./
+drwxr-xr-x 1 User 197121  0 May  4 17:45 ../
+-rw-r--r-- 1 User 197121 21 May  4 18:01 Air.txt
+-rw-r--r-- 1 User 197121  0 May  4 17:48 Sea.txt
+
+User@PC MINGW64 ~/Barcelona/Day2
+$ cp Air.txt Sea.txt ~/Barcelona/Day3		#скопировать файлы из папки Day2 в папку Day3
+
+User@PC MINGW64 ~/Barcelona/Day2
+$ cd ~/Barcelona/Day3
+
+User@PC MINGW64 ~/Barcelona/Day3
+$ ls -la
+total 1
+drwxr-xr-x 1 User 197121  0 May  4 18:10 ./
+drwxr-xr-x 1 User 197121  0 May  4 17:45 ../
+-rw-r--r-- 1 User 197121 21 May  4 18:10 Air.txt
+-rw-r--r-- 1 User 197121  0 May  4 18:10 Sea.txt
+
+User@PC MINGW64 ~
+$ find -name Attractions.txt			#найти файл по имени
+./Barcelona/Day1/Attractions.txt
+
+User@PC MINGW64 ~
+$ cat ~/Barcelona/Day1/Attractions.txt		#вывести в терминал содержимое файла
+1. Sagrada Familia
+2. La Rambla
+3. Parc Guëll
+4. Casa Batllo
+5. Font Màgica
+6. Barceloneta
+7. Gothic Quarter
+8. Casa Milà
+9. Montjuïc
+10. Camp Nou
+11. Santa Maria del Mar
+12. La Boqueria Market
+13. Museu Picasso
+14. Barcelona Cathedral
+15. Parc de la Ciutadella
+
+
+User@PC MINGW64 ~
+$ tail -f  ~/Barcelona/Day1/Attractions.txt	#посмотреть содержимое файла в реальном времени
+7. Gothic Quarter
+8. Casa Milà
+9. Montjuïc
+10. Camp Nou
+11. Santa Maria del Mar
+12. La Boqueria Market
+13. Museu Picasso
+14. Barcelona Cathedral
+15. Parc de la Ciutadella
+
+16. Tibidabo
+17. Palau de la Musica Catalana
+
+
+[1]+  Stopped                 tail -f ~/Barcelona/Day1/Attractions.txt
+
+User@PC MINGW64 ~
+$ head -n5 ~/Barcelona/Day1/Attractions.txt	#вывести первые 5 строк файла
+1. Sagrada Familia
+2. La Rambla
+3. Parc Guëll
+4. Casa Batllo
+5. Font Màgica
+
+User@PC MINGW64 ~
+$ tail -n5 ~/Barcelona/Day1/Attractions.txt	#вывести последние 5 строк файла
+13. Museu Picasso
+14. Barcelona Cathedral
+15. Parc de la Ciutadella
+16. Tibidabo
+17. Palau de la Musica Catalana
+
+User@PC MINGW64 ~
+$ date						#дата, время
+Tue May  4 18:44:42     2021
+
+User@PC MINGW64 ~
+$ grep Parc ~/Barcelona/Day1/Attractions.txt	#поиск по заданному шаблону
+3. Parc Guëll
+15. Parc de la Ciutadella
+
+User@PC MINGW64 ~
+$
